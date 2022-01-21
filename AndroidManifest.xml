@@ -42,7 +42,7 @@
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS"/>
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS"/>
     <application android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:backupAgent="com.android.launcher3.LauncherBackupAgent" android:backupInForeground="true" android:extractNativeLibs="true" android:fullBackupContent="@xml/backupscheme" android:fullBackupOnly="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_home" android:label="@string/derived_app_name" android:largeHeap="@bool/config_largeHeap" android:restoreAnyVersion="true" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesNonSdkApi="true">
-        <activity android:clearTaskOnLaunch="true" android:configChanges="density|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize" android:enabled="true" android:launchMode="singleTask" android:name="com.google.android.apps.nexuslauncher.NexusLauncherActivity" android:resizeableActivity="true" android:resumeWhilePausing="true" android:screenOrientation="unspecified" android:stateNotNeeded="true" android:taskAffinity="" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustPan">
+        <activity android:clearTaskOnLaunch="true" android:exported="true" android:configChanges="density|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize" android:enabled="true" android:launchMode="singleTask" android:name="com.google.android.apps.nexuslauncher.NexusLauncherActivity" android:resizeableActivity="true" android:resumeWhilePausing="true" android:screenOrientation="unspecified" android:stateNotNeeded="true" android:taskAffinity="" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.HOME"/>
@@ -54,14 +54,14 @@
             <meta-data android:name="com.android.launcher3.themedicon.option" android:value="com.google.android.apps.nexuslauncher.grid_control"/>
         </activity>
         <provider android:authorities="com.google.android.apps.nexuslauncher.appssearch" android:exported="true" android:grantUriPermissions="true" android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider"/>
-        <activity android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity" android:theme="@android:style/Theme.NoDisplay">
+        <activity android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity" android:exported="true" android:theme="@android:style/Theme.NoDisplay">
             <intent-filter android:priority="1">
                 <action android:name="com.google.android.apps.nexuslauncher.search.APP_LAUNCH"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="vnd.android.cursor.dir/vnd.android.search.suggest" android:scheme="content"/>
             </intent-filter>
         </activity>
-        <activity android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:name="com.google.android.apps.nexuslauncher.EduStarterActivity" android:noHistory="true" android:permission="com.google.android.apps.nexuslauncher.permission.HOTSEAT_EDU" android:theme="@android:style/Theme.NoDisplay">
+        <activity android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:exported="true" android:name="com.google.android.apps.nexuslauncher.EduStarterActivity" android:noHistory="true" android:permission="com.google.android.apps.nexuslauncher.permission.HOTSEAT_EDU" android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU"/>
                 <action android:name="com.android.launcher3.action.SHOW_ALLAPPS_SEARCH_EDU"/>
@@ -69,22 +69,22 @@
             </intent-filter>
         </activity>
         <receiver android:name="com.google.android.apps.nexuslauncher.qsb.LongClickReceiver"/>
-        <receiver android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver" android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
+        <receiver android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver" android:exported="true" android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
             <intent-filter>
                 <action android:name="com.google.android.systemui.OPA_ENABLED"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="com.google.android.apps.nexuslauncher.SetupWizardStartReceiver" android:permission="android.permission.REBOOT">
+        <receiver android:name="com.google.android.apps.nexuslauncher.SetupWizardStartReceiver" android:exported="true"  android:permission="android.permission.REBOOT">
             <intent-filter>
                 <action android:name="com.google.android.setupwizard.SETUP_WIZARD_START"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="com.google.android.apps.nexuslauncher.LauncherLayoutPreloadReceiver" android:permission="android.permission.REBOOT">
+        <receiver android:name="com.google.android.apps.nexuslauncher.LauncherLayoutPreloadReceiver" android:exported="true"  android:permission="android.permission.REBOOT">
             <intent-filter>
                 <action android:name="com.android.setupwizard.action.LOAD_LAUNCHER_LAYOUT"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver" android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
+        <receiver android:name="com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver" android:exported="true"  android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
             <intent-filter>
                 <action android:name="com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE"/>
             </intent-filter>
@@ -95,7 +95,7 @@
                 <action android:name="android.intent.action.QUICKSTEP_SERVICE"/>
             </intent-filter>
         </service>
-        <activity android:clearTaskOnLaunch="true" android:configChanges="density|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.quickstep.RecentsActivity" android:resizeableActivity="true" android:resumeWhilePausing="true" android:screenOrientation="unspecified" android:stateNotNeeded="true" android:taskAffinity="" android:theme="@style/LauncherTheme"/>
+        <activity android:clearTaskOnLaunch="true" android:exported="true" android:configChanges="density|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.quickstep.RecentsActivity" android:resizeableActivity="true" android:resumeWhilePausing="true" android:screenOrientation="unspecified" android:stateNotNeeded="true" android:taskAffinity="" android:theme="@style/LauncherTheme"/>
         <provider android:authorities="com.google.android.apps.nexuslauncher" android:exported="true" android:grantUriPermissions="true" android:multiprocess="true" android:name="com.android.quickstep.LauncherSearchIndexablesProvider" android:permission="android.permission.READ_SEARCH_INDEXABLES">
             <intent-filter>
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER"/>
