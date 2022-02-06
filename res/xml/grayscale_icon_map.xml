@@ -222,4 +222,20 @@
     <icon drawable="@drawable/themed_icon_netease" package="com.netease.cloudmusic" />
     <icon drawable="@drawable/themed_icon_wechat" package="com.tencent.mm" />
     <icon drawable="@drawable/themed_icon_taobao" package="com.taobao.taobao" />
+    <icon drawable="@drawable/themed_icon_shizuku" package="moe.shizuku.privileged.api" />
+    <icon drawable="@drawable/themed_icon_airmessage" package="me.tagavari.airmessage" />
+    <icon drawable="@drawable/themed_icon_bilibili" package="com.bilibili.app.in" />
+    <icon drawable="@drawable/themed_icon_bilibili" package="tv.danmaku.bili" />
+    <icon drawable="@drawable/themed_icon_activitylauncher" package="de.szalkowski.activitylauncher" />
+    <icon drawable="@drawable/themed_icon_gpstest" package="com.chartcross.gpstest" />
+    <icon drawable="@drawable/themed_icon_drminfo" package="com.androidfung.drminfo" />
+    <icon drawable="@drawable/themed_icon_juicessh" package="com.sonelli.juicessh" />
+    <icon drawable="@drawable/themed_icon_alipay" package="com.eg.android.AlipayGphone" />
+    <icon drawable="@drawable/themed_icon_qqmusic" package="com.tencent.qqmusic" />
+    <icon drawable="@drawable/themed_icon_tachiyomi" package="eu.kanade.tachiyomi.j2k" />
+    <icon drawable="@drawable/themed_icon_tachiyomi" package="eu.kanade.tachiyomi" />
+    <icon drawable="@drawable/themed_icon_donghuafeng" package="tw.com.gamer.android.animad" />
+    <icon drawable="@drawable/themed_icon_panoscrobble" package="com.arn.scrobble" />
+    <icon drawable="@drawable/themed_icon_coolapk" package="com.coolapk.market" />
+
 </icons>
